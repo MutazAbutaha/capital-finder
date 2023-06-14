@@ -1,5 +1,10 @@
 # Project Name : capital-finder
-## Authors : ALMoutaz AbuTaha,Firas Awadallah,Ibraheem Feqasi,Mahdi Malkawi,Aiman Malkawi,Ibraheem Areeda,Malik Abdellal
+
+## Authors : Al Moutaz AbuTaha
+
+
 ## Test 
-* For [Capital](https://capital-finder-sepia.vercel.app/api/capital_finder?capital=cairo)
-* For [Country](https://capital-finder-sepia.vercel.app/api/capital_finder?country=jordan)
+
+*  [Capital ==> https://capital-finder-sepia.vercel.app/api/capital_finder?capital=cairo](https://capital-finder-sepia.vercel.app/api/capital_finder?capital=cairo)
+
+*  [Country ==> https://capital-finder-sepia.vercel.app/api/capital_finder?country=jordan](https://capital-finder-sepia.vercel.app/api/capital_finder?country=jordan)
