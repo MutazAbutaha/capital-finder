@@ -1,36 +1,37 @@
 from http.server import BaseHTTPRequestHandler
 from urllib import parse
-import requests 
+import requests
+
+
 class handler(BaseHTTPRequestHandler):
- 
-  def do_GET(self):
-    self.send_response(200)
-    self.send_header('Content-type', 'text/plain')
-    self.end_headers()
-   
-    url_path = self.path
-    url_components = parse.urlsplit(url_path)
-    query_list = parse.parse_qsl(url_components.query)
-    my_dict = dict(query_list)
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header("Content-type", "text/plain")
+        self.end_headers()
 
-    if 'country' in my_dict:
-      word = my_dict.get('country')
-      url= 'https://restcountries.com/v3.1/name/'
-      res = requests.get(url+word)
-      data = res.json()
-      for word_data in data :
-          definition = word_data['capital'][0]
-          message = f"The capital of {word} is {definition}"
+        url_path = self.path
+        url_components = parse.urlsplit(url_path)
+        query_list = parse.parse_qsl(url_components.query)
+        my_query = dict(query_list)
 
-    elif 'capital' in my_dict:
-      word = my_dict.get('capital')
-      url= 'https://restcountries.com/v3.1/capital/'
-      res = requests.get(url+word)
-      data = res.json()
-      for word_data in data :
-        definition = word_data['name']['common']
-        message = f"{word} The Capital of {definition}"
+        def capital_country_finder():
+          if "country" in my_query:
+              country = my_query.get("country")
+              url = "https://restcountries.com/v3.1/name/"
+              res = requests.get(url + country)
+              data = res.json()
+              for word_data in data:
+                  capitals = word_data["capital"][0]
+                  message = f"The capital of {country} is {capitals}"
 
+          elif "capital" in my_query:
+              capital = my_query.get("capital")
+              url = "https://restcountries.com/v3.1/capital/"
+              res = requests.get(url + capital)
+              data = res.json()
+              for word_data in data:
+                  countries = word_data["name"]["common"]
+                  message = f"{capital} The Capital of {countries}"
 
-    self.wfile.write(message.encode())
-    return
+          return self.wfile.write(message.encode())
+        return capital_country_finder()
