@@ -5,6 +5,6 @@
 
 ## Test 
 
-*  [Capital ==> https://capital-finder-sepia.vercel.app/api/capital_finder?capital=cairo](https://capital-finder-sepia.vercel.app/api/capital_finder?capital=cairo)
+*  [Capital ==> https://capital-finder-sepia.vercel.app/api/capital_finder?capital=cairo](https://capital-finder-sepia.vercel.app/api/capital_finder?capital=Damascus)
 
-*  [Country ==> https://capital-finder-sepia.vercel.app/api/capital_finder?country=jordan](https://capital-finder-sepia.vercel.app/api/capital_finder?country=jordan)
+*  [Country ==> https://capital-finder-sepia.vercel.app/api/capital_finder?country=jordan](https://capital-finder-sepia.vercel.app/api/capital_finder?country=Syria)
